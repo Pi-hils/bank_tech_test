@@ -13,4 +13,9 @@ RSpec.describe '.Account' do
     it 'deposits any amount I deposit' do
       expect(account.deposit(1000)).to eq(1000)
     end
+
+    it 'deposit more money and added to total' do
+      account.deposit(1000)
+      expect(account.add_total(1000)).to eq(2000)
+    end
 end
