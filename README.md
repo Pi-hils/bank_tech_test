@@ -20,7 +20,11 @@ To run RSpec, type `rspec` in your command line.
 ```
 As a user,
 So I can deposit money into an account,
-I have cretaed an account with my bank
+I have created an account with my bank
+
+As a new user,
+I have no money deposited in my account yet,
+Hence my account is empty
 
 As a user,
 So I am not hoarding money in my purse,
