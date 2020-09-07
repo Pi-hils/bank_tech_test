@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 class Account
-  attr_reader :balance
+  attr_reader :balance, :total
   def initialize
     @balance = 0
+    @total = total
   end
   
   def empty?
@@ -10,14 +11,14 @@ class Account
   end
 
   def deposit(amount)
-  p  @balance = amount
+    @balance += amount
   end
 
-  def add_total(amount)
-    amount += @balance
-  #   @balance= []
-  #  p add_amount = @balance.push(amount) 
-  #   add_amount.inject{|dep1, dep2| 
-  #   dep1 + dep2 }
+  #not even needed but it was good practice. To refactor
+  def add_total
+    bank = []
+    amount = bank.push(@balance)
+    bank.inject{ |a, b|
+    a += b }
   end
 end
