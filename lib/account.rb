@@ -21,4 +21,9 @@ class Account
     bank.inject{ |a, b|
     a += b }
   end
+
+  def withdraw(amount)
+    @balance -= amount
+  end
+  
 end
