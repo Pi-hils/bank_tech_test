@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 class Account
-  attr_reader :balance, :date, :history, :amount
+  attr_reader :balance, :date, :statement, :history, :amount
 
-  def initialize(balance = 0)
+  def initialize(balance=0)
     @balance = balance
     @amount = amount
     @history = []
@@ -14,13 +14,13 @@ class Account
   end
 
   def deposit(amount)
-  p @date = Time.new.strftime("%d/%m/%Y")
-   @amount = amount
+    @date = Time.new.strftime("%d/%m/%Y")
+    @amount = amount
     @balance += amount
     record_deposit
     balance
   end
-  #not even needed but it was good practice. To refactor
+
   def add_total
     bank = []
     total = bank.push(@balance)
@@ -37,7 +37,8 @@ class Account
   end
 
   def print_header
-    ["date || credit || deposit || add_total"]
+   header = ["date || credit || deposit || add_total"]
+   header
   end
 
   def transactions
@@ -56,7 +57,7 @@ class Account
     transactions = [@date, amount, nil, @balance]
     @history.push(transactions)
   end
-  
+
   def record_withdraw
     transactions =[@date, nil, amount, @balance]
     @history.push(transactions)
