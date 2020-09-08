@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 class Account
-  attr_reader :balance, :date, :statement, :history, :amount
+  attr_reader :balance, :date, :history, :amount
 
-  def initialize(balance=0)
+  def initialize(balance = 0)
     @balance = balance
     @amount = amount
-    @date = Time.new.strftime("%d/%m/%Y")
     @history = []
-    @statement = ["date || credit || deposit || add_total",
-      "#{date}|| #{deposit(balance)} || #{withdraw(balance)} || #{add_total}"]
+    @date = ''
   end
   
   def empty?
@@ -16,26 +14,51 @@ class Account
   end
 
   def deposit(amount)
-   @balance += amount
+  p @date = Time.new.strftime("%d/%m/%Y")
+   @amount = amount
+    @balance += amount
+    record_deposit
+    balance
   end
-
   #not even needed but it was good practice. To refactor
   def add_total
     bank = []
-    amount = bank.push(@balance)
+    total = bank.push(@balance)
     bank.inject{ |a, b|
     a += b }
   end
 
   def withdraw(amount)
+    @amount = amount
+    @date = Time.new.strftime("%d/%m/%Y") 
     @balance -= amount
+    record_withdraw
+    balance
   end
 
-  def display_history
-    @history
+  def print_header
+    ["date || credit || deposit || add_total"]
+  end
+
+  def transactions
+    history_statement = @history.reverse()
+    history_statement.each{ |transaction| 
+    puts "#{transaction[0]}|| #{transaction[1]}|| #{transaction[2]}|| #{transaction[3]}"}
   end
 
   def print_statement
-    @statement
+    print_header
+    transactions
+  end
+
+  private
+  def record_deposit
+    transactions = [@date, amount, nil, @balance]
+    @history.push(transactions)
+  end
+  
+  def record_withdraw
+    transactions =[@date, nil, amount, @balance]
+    @history.push(transactions)
   end
 end
