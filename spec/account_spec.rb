@@ -28,4 +28,5 @@ RSpec.describe '.Account' do
         expect(account.withdraw(20)).to eq(60)
       end
     end
+
 end

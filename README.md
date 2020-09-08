@@ -3,8 +3,8 @@ Deposits, withdrawal.
 Account statement (date, amount, balance) printing.
 Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-# How to run and install.
-in your terminal, type: 
+## How to run and install.
+In your terminal, type: 
 rspec --init  _(initiates a spec, spec_helper file)_
 bundle init _(Gemfile created)_
 Add necessary gems to the file
@@ -15,6 +15,18 @@ To run the test in irb, change the terminal environment to irb by simply typing 
 
 To run RSpec, type `rspec` in your command line.
 
+## How to test coverage
+Insert the below into line 1 of your spec_helper
+```
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+                                                                 SimpleCov::Formatter::Console,
+                                                                 SimpleCov::Formatter::HTMLFormatter
+                                                               ])
+SimpleCov.start
+```
 
 ## User story
 ```
@@ -52,7 +64,7 @@ I will like to be able to withdraw 500 from my account
 
 As a user,
 To be accountable,
-I would like the date to have been recorded as 14-01-2012
+I would like to be able to print out a statement
 
 As a user,
 So I can see all my activities,
