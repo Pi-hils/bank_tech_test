@@ -22,8 +22,9 @@ require 'simplecov'
 require 'simplecov-console'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-                                                                 SimpleCov::Formatter::Console,
-                                                                 SimpleCov::Formatter::HTMLFormatter
+                      SimpleCov::Formatter::Console,
+                      #To see the HTML grid
+                      SimpleCov::Formatter::HTMLFormatter
                                                                ])
 SimpleCov.start
 ```
@@ -70,3 +71,9 @@ As a user,
 So I can see all my activities,
 I would like to be able to print out a full statement of all my actions - deposits/withdrawals, date, and amount
 ```
+### Test
+[![Image from Gyazo](https://i.gyazo.com/d81f8569b5431a5441dd55f3c7b10889.png)](https://gyazo.com/d81f8569b5431a5441dd55f3c7b10889)
+
+### Coverage
+[![Image from Gyazo](https://i.gyazo.com/72ccb9f55fb3be1f2dfd4b681add8de9.png)](https://gyazo.com/72ccb9f55fb3be1f2dfd4b681add8de9)
+

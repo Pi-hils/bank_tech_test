@@ -10,10 +10,10 @@ RSpec.describe '.Account' do
     end
   end
 
-    context 'deposit any amount' do
-     it 'deposited' do
-        expect(account.deposit(1000)).to eq(1000)
-      end
+  context 'deposit any amount' do
+    it 'deposited' do
+      expect(account.deposit(1000)).to eq(1000)
+    end
 
     it 'totals amount' do
       account.deposit(1000)
@@ -22,30 +22,30 @@ RSpec.describe '.Account' do
     end
   end
 
-    describe "withdrawal" do
-      it 'can be done' do
-        account.deposit(80)
-        expect(account.withdraw(20)).to eq(60)
-      end
-
-      it 'records the withdrawn amount' do
-        account.deposit(100)
-        account.withdraw(20)
-        expect(account.withdraw(20)).to eq(60)
-      end
+  describe 'withdrawal' do
+    it 'can be done' do
+      account.deposit(80)
+      expect(account.withdraw(20)).to eq(60)
     end
 
-    it 'can print header' do
-      expect(account.print_header).to eql(["date || credit || deposit || add_total"])
-    end
-
-    it 'print statement' do
+    it 'records the withdrawn amount' do
       account.deposit(100)
-      expect(account.print_statement).to eq([["08/09/2020",100, nil, 100]])
+      account.withdraw(20)
+      expect(account.withdraw(20)).to eq(60)
     end
+  end
 
-    it 'transaction' do
-      account.deposit(100)
-      expect(account.transactions).to eq([["08/09/2020",100, nil, 100]])
-    end
+  it 'can print header' do
+    expect(account.print_header).to eql(['date || credit || deposit || add_total'])
+  end
+
+  it 'print statement' do
+    account.deposit(100)
+    expect(account.print_statement).to eq([['08/09/2020', 100, nil, 100]])
+  end
+
+  it 'transaction' do
+    account.deposit(100)
+    expect(account.transactions).to eq([['08/09/2020', 100, nil, 100]])
+  end
 end
