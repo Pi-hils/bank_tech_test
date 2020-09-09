@@ -41,11 +41,11 @@ RSpec.describe '.Account' do
 
   it 'print statement' do
     account.deposit(100)
-    expect(account.print_statement).to eq([['08/09/2020', 100, nil, 100]])
+    expect(account.print_statement).to eq([['09/09/2020', 100, nil, 100]])
   end
 
   it 'transaction' do
     account.deposit(100)
-    expect(account.transactions).to eq([['08/09/2020', 100, nil, 100]])
+    expect(account.transactions).to eq([['09/09/2020', 100, nil, 100]])
   end
 end
