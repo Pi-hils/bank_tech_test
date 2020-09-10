@@ -15,6 +15,16 @@ RSpec.describe '.Account' do
       expect(account.deposit(1000)).to eq(1000)
     end
 
+      #stub
+    it 'returns a specific date for 1000 deposited' do
+      # time = Time.new.strftime('%d/%m/%Y')
+      account.deposit(1000)
+      # stub(account).deposit(1000) {"10/01/2012"}
+      allow(account).to receive(:deposit).and_return("10/01/2012")
+
+      expect(account.deposit(1000)).to eq("10/01/2012")
+    end
+
     it 'totals amount' do
       account.deposit(1000)
       account.deposit(1000)
@@ -36,7 +46,7 @@ RSpec.describe '.Account' do
   end
 
   it 'can print header' do
-    expect(account.print_header).to eql(['date || credit || deposit || add_total'])
+    expect(account.print_header).to eq(['date || credit || deposit || add_total'])
   end
 
   it 'print statement' do
@@ -48,4 +58,5 @@ RSpec.describe '.Account' do
     account.deposit(100)
     expect(account.transactions).to eq([["#{Time.new.strftime('%d/%m/%Y')}", 100, nil, 100]])
   end
+
 end

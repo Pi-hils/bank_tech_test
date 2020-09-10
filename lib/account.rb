@@ -46,13 +46,12 @@ class Account
   def transactions
     history_statement = @history.reverse
     history_statement.each do |transaction|
-      puts "#{transaction[0]}|| #{transaction[1]}||
-      #{transaction[2]}|| #{transaction[3]}"
+      puts "#{transaction[0]}|| #{transaction[1]}|| #{transaction[2]}|| #{transaction[3]}"
     end
   end
 
   def print_statement
-    print_header
+   p print_header
     transactions
   end
 
