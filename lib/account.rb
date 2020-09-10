@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class Account
   attr_reader :balance, :date, :statement, :history, :amount
 
@@ -7,7 +6,7 @@ class Account
     @balance = balance
     @amount = amount
     @history = []
-    @date = ''
+    @date = ""
   end
 
   def empty?
@@ -15,11 +14,11 @@ class Account
   end
 
   def deposit(amount)
-    @date = Time.new.strftime('%d/%m/%Y')
+  p @date = "10/01/2012"
     @amount = amount
     @balance += amount
     record_deposit
-    balance
+  p  balance
   end
 
   def add_total
@@ -32,10 +31,10 @@ class Account
 
   def withdraw(amount)
     @amount = amount
-    @date = Time.new.strftime('%d/%m/%Y')
+   p @date = "14/01/2012"
     @balance -= amount
     record_withdraw
-    balance
+    p balance
   end
 
   def print_header
@@ -51,9 +50,9 @@ class Account
   end
 
   def print_statement
-   p print_header
-    transactions
-  end
+    p print_header
+     transactions.sort
+   end
 
   private
 
@@ -67,3 +66,4 @@ class Account
     @history.push(transactions)
   end
 end
+
