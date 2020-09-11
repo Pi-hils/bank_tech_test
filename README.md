@@ -78,7 +78,7 @@ So I can see all my activities,
 I would like to be able to print out a full statement of all my actions newest first - deposits/withdrawals, date, and amount
 ```
 ### Test
-[![Image from Gyazo](https://i.gyazo.com/d81f8569b5431a5441dd55f3c7b10889.png)](https://gyazo.com/d81f8569b5431a5441dd55f3c7b10889)
+[![Image from Gyazo](https://i.gyazo.com/0e976dda626492daf127f5c22bd85061.png)](https://gyazo.com/0e976dda626492daf127f5c22bd85061)
 
 ### Coverage
 [![Image from Gyazo](https://i.gyazo.com/72ccb9f55fb3be1f2dfd4b681add8de9.png)](https://gyazo.com/72ccb9f55fb3be1f2dfd4b681add8de9)

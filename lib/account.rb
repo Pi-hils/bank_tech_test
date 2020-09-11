@@ -18,7 +18,7 @@ class Account
     @amount = amount
     @balance += amount
     record_deposit
-  p  balance
+  p balance.round(2)
   end
 
   def add_total
@@ -32,9 +32,9 @@ class Account
   def withdraw(amount)
     @amount = amount
    p @date = "14/01/2012"
-    @balance -= amount
+    @balance -= amount.round(2)
     record_withdraw
-    p balance
+    p balance.round(2)
   end
 
   def print_header
@@ -66,4 +66,3 @@ class Account
     @history.push(transactions)
   end
 end
-
